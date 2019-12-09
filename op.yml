@@ -7,7 +7,7 @@
   tasks:
   - name: Whoami
     delegate_to: localhost
-    shell: op -help
+    shell: op --version
     register: result
 
   - name: Print whoami
