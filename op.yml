@@ -1,0 +1,15 @@
+- hosts: localhost
+  connection: local
+  gather_facts: no
+  vars:
+
+
+  tasks:
+  - name: Whoami
+    delegate_to: localhost
+    shell: op -help
+    register: result
+
+  - name: Print whoami
+    debug:
+      var: result
