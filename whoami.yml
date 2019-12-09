@@ -1,0 +1,24 @@
+- hosts: localhost
+  connection: local
+  gather_facts: no
+  vars:
+  
+
+  tasks:
+  - name: Whoami
+    delegate_to: localhost
+    shell: whoami
+    register: result
+
+  - name: Print whoami
+    debug:
+      var: result
+
+  - name: This command will change the working directory to somedir/.
+    shell:
+      cmd: pwd
+    register: result2
+
+  - name: Print pwd
+    debug:
+      var: result2
