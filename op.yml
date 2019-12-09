@@ -7,7 +7,7 @@
   tasks:
   - name: Whoami
     delegate_to: localhost
-    shell: op --version
+    shell: cat ~/.op/config
     register: result
 
   - name: Print whoami
